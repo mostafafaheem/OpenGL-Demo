@@ -1,0 +1,18 @@
+#version 330 core
+
+// Ouput data
+in vec3 pixelcolor;
+in vec2 Tex;
+out vec3 color;
+uniform sampler2D myTextureSampler;
+
+void main()
+{
+	if (pixelcolor.x == 0 && pixelcolor.y == 0 && pixelcolor.z == 0){
+		color = texture(myTextureSampler,Tex).rgb;
+	}
+	else {
+		color = pixelcolor;
+	}
+
+}
